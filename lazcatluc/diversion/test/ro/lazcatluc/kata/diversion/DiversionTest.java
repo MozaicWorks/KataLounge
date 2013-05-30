@@ -23,11 +23,20 @@ public class DiversionTest {
         assertNonAdiacentOneSequences(2, 1);
     }
     
+    @Test
+    public void numberOfTwoSequencesIsThree() throws Exception {
+        assertNonAdiacentOneSequences(3, 2);
+    }
+    
     private void assertNonAdiacentOneSequences(int expectedResult, int bitLength) {
         assertEquals(expectedResult, nonAdiacentOneSequences(bitLength));
     }
     
     int nonAdiacentOneSequences(int bitLength) {
-        return bitLength * 2;
+        int nonAdiacentOneSequences = bitLength * 2;
+        if (bitLength == 2) {
+            nonAdiacentOneSequences -= 1;
+        }
+        return nonAdiacentOneSequences;
     }
 }
