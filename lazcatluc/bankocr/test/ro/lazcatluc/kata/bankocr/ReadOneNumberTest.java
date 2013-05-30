@@ -85,6 +85,16 @@ public class ReadOneNumberTest {
         assertEquals(7, parse(seven));
     }
     
+    @Test
+    public void readEightIs8() throws Exception {
+        String eight = 
+        " _ "+
+        "|_|"+
+        "|_|";
+        
+        assertEquals(8, parse(eight));
+    }
+    
     int parse(String s) {
         if (parseOne(s)) return 1;
         if (parseTwo(s)) return 2;
@@ -92,7 +102,8 @@ public class ReadOneNumberTest {
         if (parseFour(s)) return 4;
         if (parseFive(s)) return 5;
         if (parseSix(s)) return 6;
-        return 7;
+        if (parseSeven(s)) return 7;
+        return 8;
     }
     
     boolean parseOne(String s) {
@@ -116,7 +127,10 @@ public class ReadOneNumberTest {
     }
     
     boolean parseSix(String s) {
-        return s.endsWith("_|");
+        return s.endsWith(" |_|");
     }
     
+    boolean parseSeven(String s) {
+        return s.endsWith("  |");
+    }
 }
