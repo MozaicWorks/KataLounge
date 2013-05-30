@@ -29,20 +29,6 @@ public class BowlingTest {
         assertGoesTo(1, new RollBuilder().setFirst(1).setSecond(0).createRoll());
     }
     
-    @Test
-    public void rollingZeroOneDoesntHaveBonus() throws Exception {
-        Bowling bowling = newBowlingWith(new RollBuilder().setFirst(0).setSecond(1).createRoll());
-        
-        assertFalse(bowling.hasBonus());
-    }
-    
-    @Test
-    public void rollingFiveFiveHasBonus() throws Exception {
-        Bowling bowling = newBowlingWith(new RollBuilder().setFirst(5).setSecond(5).createRoll());
-        
-        assertTrue(bowling.hasBonus());
-    }
-    
     private void assertGoesTo(int expectedResult, Roll roll) {
         Bowling bowling = newBowlingWith(roll);
         int result = bowling.getResult();

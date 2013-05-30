@@ -19,8 +19,5 @@ public class Bowling {
     public int getResult() {
         return roll.getFirst() + roll.getSecond();
     }
-    
-    public boolean hasBonus() {
-        return roll.hasBonus();
-    }
+
 }
