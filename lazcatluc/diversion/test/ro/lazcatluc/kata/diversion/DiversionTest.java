@@ -42,15 +42,6 @@ public class DiversionTest {
         assertNonAdiacentOneSequences(13, 5);
     }
     private void assertNonAdiacentOneSequences(int expectedResult, int bitLength) {
-        assertEquals(expectedResult, nonAdiacentOneSequences(bitLength));
-    }
-    
-    int nonAdiacentOneSequences(int bitLength) {
-        if (bitLength < 1) {
-            return 1;
-        }
-        return nonAdiacentOneSequences(bitLength-1)+
-               nonAdiacentOneSequences(bitLength-2);
-        
+        assertEquals(expectedResult, Diversion.nonAdiacentOneSequences(bitLength));
     }
 }
