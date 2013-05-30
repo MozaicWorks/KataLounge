@@ -95,6 +95,26 @@ public class ReadOneNumberTest {
         assertEquals(8, parse(eight));
     }
     
+    @Test
+    public void readNineIs9() throws Exception {
+        String nine = 
+        " _ "+
+        "|_|"+
+        " _|";
+        
+        assertEquals(9, parse(nine));
+    }
+    
+    @Test
+    public void readZeroIs0() throws Exception {
+        String zero = 
+        " _ "+
+        "| |"+
+        "|_|";
+        
+        assertEquals(0, parse(zero));
+    }
+    
     int parse(String s) {
         if (parseOne(s)) return 1;
         if (parseTwo(s)) return 2;
@@ -103,7 +123,9 @@ public class ReadOneNumberTest {
         if (parseFive(s)) return 5;
         if (parseSix(s)) return 6;
         if (parseSeven(s)) return 7;
-        return 8;
+        if (parseEight(s)) return 8;
+        if (parseNine(s)) return 9;
+        return 0;
     }
     
     boolean parseOne(String s) {
@@ -123,7 +145,7 @@ public class ReadOneNumberTest {
     }
     
     boolean parseFive(String s) {
-        return s.endsWith(" _|");
+        return s.endsWith("  _|");
     }
     
     boolean parseSix(String s) {
@@ -132,5 +154,13 @@ public class ReadOneNumberTest {
     
     boolean parseSeven(String s) {
         return s.endsWith("  |");
+    }
+    
+    boolean parseEight(String s) {
+        return s.endsWith("_||_|");
+    }
+    
+    boolean parseNine(String s) {
+        return s.endsWith(" _|");
     }
 }
