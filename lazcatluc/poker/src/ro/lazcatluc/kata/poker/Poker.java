@@ -9,5 +9,7 @@ package ro.lazcatluc.kata.poker;
  * @author Catalin
  */
 public class Poker {
-
+    public boolean isDraw() {
+        return true;
+    }
 }
