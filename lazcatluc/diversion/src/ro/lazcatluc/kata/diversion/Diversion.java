@@ -18,7 +18,7 @@ public class Diversion {
         System.out.println(nonAdiacentOneSequences(bitLength));
     }
 
-    public static int nonAdiacentOneSequences(int bitLength) {
+    public static long nonAdiacentOneSequences(int bitLength) {
         if (bitLength < 1) {
             return 1;
         }
