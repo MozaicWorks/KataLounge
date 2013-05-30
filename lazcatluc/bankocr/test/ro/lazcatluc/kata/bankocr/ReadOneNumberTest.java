@@ -35,7 +35,29 @@ public class ReadOneNumberTest {
         assertEquals(2, parse(two));
     }
     
-    int parse(String s) {
-        return s.contains("_") ? 2 : 1;
+    @Test
+    public void readThreeIs3() throws Exception {
+        String three=
+        " _ "+
+        " _|"+
+        " _|";
+        
+        assertEquals(3, parse(three));
     }
+    
+    int parse(String s) {
+        if (parseOne(s)) return 1;
+        if (parseTwo(s)) return 2;
+        return 3;
+    }
+    
+    boolean parseOne(String s) {
+        return !s.contains("_");
+    }
+    
+    boolean parseTwo(String s) {
+        return s.endsWith(" ");
+    }
+    
+    
 }
