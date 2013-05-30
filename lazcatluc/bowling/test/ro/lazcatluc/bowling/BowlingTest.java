@@ -25,4 +25,16 @@ public class BowlingTest {
         
         assertEquals(expectedResult, result);
     }
+    
+    @Test
+    public void rollingOneZeroGoesToOne() throws Exception {
+        Bowling bowling = new Bowling();
+        int expectedResult = 1;
+        
+        bowling.roll(1);
+        bowling.roll(0);
+        int result = bowling.getResult();
+        
+        assertEquals(expectedResult, result);
+    }
 }
