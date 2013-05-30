@@ -18,7 +18,7 @@ public class Poker {
     }
     
     public boolean isDraw() {
-        return true;
+        return player1.getCard() == player2.getCard();
     }
     
     public Player getWinner() {

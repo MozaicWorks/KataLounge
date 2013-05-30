@@ -10,9 +10,14 @@ package ro.lazcatluc.kata.poker;
  */
 public class PokerBuilderWithCards {
     
-    private final int card1;
-    private final int card2;
+    private int card1;
+    private int card2;
 
+    public PokerBuilderWithCards() {
+        this.card1 = 1;
+        this.card2 = 1;
+    }
+    
     public PokerBuilderWithCards(int card1, int card2) {
         this.card1 = card1;
         this.card2 = card2;
@@ -23,4 +28,13 @@ public class PokerBuilderWithCards {
                 .setPlayer2(new PlayerBuilder().setCard(card2).createPlayer()).createPoker();
     }
     
+    public Poker createPlayer1Wins() {
+        this.card1 = 2;
+        return createPoker();
+    }
+    
+    public Poker createPlayer2Wins() {
+        this.card2 = 2;
+        return createPoker();
+    }
 }
