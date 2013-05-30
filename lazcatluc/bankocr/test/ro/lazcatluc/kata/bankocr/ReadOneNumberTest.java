@@ -12,9 +12,6 @@ import static org.junit.Assert.*;
  */
 public class ReadOneNumberTest {
     
-    public ReadOneNumberTest() {
-    }
-    
     @Test
     public void readOneIs1() throws Exception {
         String one = 
