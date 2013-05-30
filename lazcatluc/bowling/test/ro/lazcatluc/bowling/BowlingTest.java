@@ -15,7 +15,7 @@ public class BowlingTest {
     
 
     @Test
-    public void nothingGoesToZero() {
+    public void nothingGoesToZero() throws Exception {
         assertRollGoesTo(0, 0, 0);
     }
     
@@ -24,13 +24,35 @@ public class BowlingTest {
         assertRollGoesTo(1, 0, 1);
     }
     
-    private void assertRollGoesTo(int expectedResult, int firstRoll, int secondRoll) {
-        Bowling bowling = new Bowling();
+    @Test
+    public void rollingZeroOneGoesToOne() throws Exception {
+        assertRollGoesTo(1, 1, 0);
+    }
+    
+    @Test
+    public void rollingZeroOneDoesntHaveBonus() throws Exception {
+        Bowling bowling = newBowlingWithTwoRolls(0, 1);
         
-        bowling.roll(firstRoll);
-        bowling.roll(secondRoll);
+        assertFalse(bowling.hasBonus());
+    }
+    
+    @Test
+    public void rollingFiveFiveHasBonus() throws Exception {
+        Bowling bowling = newBowlingWithTwoRolls(5, 5);
+        
+        assertTrue(bowling.hasBonus());
+    }
+    
+    private void assertRollGoesTo(int expectedResult, int firstRoll, int secondRoll) {
+        Bowling bowling = newBowlingWithTwoRolls(firstRoll, secondRoll);
         int result = bowling.getResult();
         
         assertEquals(expectedResult, result);
+    }
+
+    private Bowling newBowlingWithTwoRolls(int firstRoll, int secondRoll) {
+        Bowling bowling = new Bowling();
+        bowling.roll(new Roll(firstRoll,secondRoll));
+        return bowling;
     }
 }

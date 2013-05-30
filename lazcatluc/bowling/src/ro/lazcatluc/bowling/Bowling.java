@@ -16,7 +16,15 @@ public class Bowling {
         result += popice;
     }
     
+    public void roll(Roll roll) {
+        result += roll.getFirst() + roll.getSecond();
+    }
+    
     public int getResult() {
         return result;
+    }
+    
+    public boolean hasBonus() {
+        return result == 10;
     }
 }
