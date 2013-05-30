@@ -31,9 +31,21 @@ public class PokerTest {
     }
     
     @Test
+    public void oneCardSecondCardHigherSecondPlayerWins() throws Exception {
+        Player player1 = new PlayerBuilder().setCard(1).createPlayer();
+        Player player2 = new PlayerBuilder().setCard(2).createPlayer();
+        
+        Poker poker = new PokerBuilder().setPlayer1(player1).setPlayer2(player2).createPoker();
+        
+        assertEquals(player2, poker.getWinner());
+        
+    }    
+    
+    @Test
     public void oneCardEqualCardsIsDraw() throws Exception {
         Poker poker = new PokerBuilderWithCards(2, 2).createPoker();
         
         assertTrue(poker.isDraw());
     }
+    
 }
