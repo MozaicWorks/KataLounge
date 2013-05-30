@@ -10,5 +10,15 @@ package ro.lazcatluc.kata.reversi;
  */
 public class Reversi {
 
+    boolean isFinished() {
+        return true;
+    }
+
+    void emptyBoard() {
+    }
+
+    void line(int square) {
+    }
+
     
 }
