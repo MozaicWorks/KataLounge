@@ -22,6 +22,6 @@ public class Poker {
     }
     
     public Player getWinner() {
-        return player1;
+        return player1.getCard() > player2.getCard() ? player1 : player2;
     }
 }
