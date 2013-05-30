@@ -16,23 +16,19 @@ public class BowlingTest {
 
     @Test
     public void nothingGoesToZero() {
-        Bowling bowling = new Bowling();
-        int expectedResult = 0;
-        
-        bowling.roll(0);
-        bowling.roll(0);
-        int result = bowling.getResult();
-        
-        assertEquals(expectedResult, result);
+        assertRollGoesTo(0, 0, 0);
     }
     
     @Test
     public void rollingOneZeroGoesToOne() throws Exception {
+        assertRollGoesTo(1, 0, 1);
+    }
+    
+    private void assertRollGoesTo(int expectedResult, int firstRoll, int secondRoll) {
         Bowling bowling = new Bowling();
-        int expectedResult = 1;
         
-        bowling.roll(1);
-        bowling.roll(0);
+        bowling.roll(firstRoll);
+        bowling.roll(secondRoll);
         int result = bowling.getResult();
         
         assertEquals(expectedResult, result);
