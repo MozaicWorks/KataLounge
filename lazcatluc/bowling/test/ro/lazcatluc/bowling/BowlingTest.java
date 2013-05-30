@@ -16,31 +16,38 @@ public class BowlingTest {
 
     @Test
     public void nothingGoesToZero() throws Exception {
-        assertRollGoesTo(0, 0, 0);
+        assertGoesTo(0, new RollBuilder().setFirst(0).setSecond(0).createRoll());
     }
     
     @Test
     public void rollingOneZeroGoesToOne() throws Exception {
-        assertRollGoesTo(1, 0, 1);
+        assertGoesTo(1, new RollBuilder().setFirst(0).setSecond(1).createRoll());
     }
     
     @Test
     public void rollingZeroOneGoesToOne() throws Exception {
-        assertRollGoesTo(1, 1, 0);
+        assertGoesTo(1, new RollBuilder().setFirst(1).setSecond(0).createRoll());
     }
     
     @Test
     public void rollingZeroOneDoesntHaveBonus() throws Exception {
-        Bowling bowling = newBowlingWithTwoRolls(0, 1);
+        Bowling bowling = newBowlingWith(new RollBuilder().setFirst(0).setSecond(1).createRoll());
         
         assertFalse(bowling.hasBonus());
     }
     
     @Test
     public void rollingFiveFiveHasBonus() throws Exception {
-        Bowling bowling = newBowlingWithTwoRolls(5, 5);
+        Bowling bowling = newBowlingWith(new RollBuilder().setFirst(5).setSecond(5).createRoll());
         
         assertTrue(bowling.hasBonus());
+    }
+    
+    private void assertGoesTo(int expectedResult, Roll roll) {
+        Bowling bowling = newBowlingWith(roll);
+        int result = bowling.getResult();
+        
+        assertEquals(expectedResult, result);
     }
     
     private void assertRollGoesTo(int expectedResult, int firstRoll, int secondRoll) {
@@ -50,9 +57,13 @@ public class BowlingTest {
         assertEquals(expectedResult, result);
     }
 
-    private Bowling newBowlingWithTwoRolls(int firstRoll, int secondRoll) {
+    private Bowling newBowlingWith(Roll roll) {
         Bowling bowling = new Bowling();
-        bowling.roll(new Roll(firstRoll,secondRoll));
+        bowling.roll(roll);
         return bowling;
+    }
+    private Bowling newBowlingWithTwoRolls(int firstRoll, int secondRoll) {
+        return newBowlingWith(new RollBuilder().setFirst(firstRoll)
+                .setSecond(secondRoll).createRoll());
     }
 }
