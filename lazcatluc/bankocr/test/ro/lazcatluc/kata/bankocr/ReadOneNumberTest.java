@@ -55,11 +55,22 @@ public class ReadOneNumberTest {
         assertEquals(4, parse(four));
     }
     
+    @Test
+    public void readFiveIs5() throws Exception {
+        String five =
+        " _ "+
+        "|_ "+
+        " _|"; 
+        
+        assertEquals(5, parse(five));
+    }
+    
     int parse(String s) {
         if (parseOne(s)) return 1;
         if (parseTwo(s)) return 2;
         if (parseThree(s)) return 3;
-        return 4;
+        if (parseFour(s)) return 4;
+        return 5;
     }
     
     boolean parseOne(String s) {
@@ -71,7 +82,11 @@ public class ReadOneNumberTest {
     }
     
     boolean parseThree(String s) {
-        return !s.startsWith("  ");
+        return !s.contains("|_");
+    }
+    
+    boolean parseFour(String s) {
+        return s.contains("   ");
     }
     
 }
