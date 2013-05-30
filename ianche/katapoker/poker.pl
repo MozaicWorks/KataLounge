@@ -15,8 +15,24 @@ while (<DATA>){
     print Dumper (is_pair($hand));
     print Dumper (is_two_pairs($hand));
     print Dumper (is_three($hand));
+    print Dumper (is_four($hand));
+    print Dumper (is_straight_flush($hand));
 }
-
+sub is_straight_flush {
+    my $hand = shift;
+    my $count = 0;
+    my $str_flush = 0;
+    # is it a straight?
+    my $str = is_straight($hand);
+    print ref $str;
+    if ($str->[0] != 0) {
+        # if there is only one color, then it's a straight
+        if (scalar (keys %{$hand->{'colors'}}) == 1) {
+            return [$str->[0], 0];
+        }
+    }
+    return [0,0]
+}
 sub is_three {
     my $hand = shift;
     my $count = 0;
@@ -33,11 +49,8 @@ sub is_three {
         if($three_of !~ /\d/) {
             $three_of = $figure_map->{$three_of};
         }
-        return [$three_of, 0];
-    }  else {
-        return [0, 0];
     }
-    
+    return [$three_of, 0];
 }
 sub is_four {
     my $hand = shift;
@@ -55,13 +68,9 @@ sub is_four {
         if($four_of !~ /\d/) {
             $four_of = $figure_map->{$four_of};
         }
-        return [$four_of, 0];
-    }  else {
-        return [0, 0];
     }
-    
+    return [$four_of, 0];
 }
-
 sub is_flush {
     my $hand = shift;
     foreach ($hand->{'colors'}) {
@@ -122,7 +131,7 @@ sub is_straight {
     my $hand = shift;
     my $cards_raw = join '', @{$hand->{'sorted'}};
     if ($pack =~ /$cards_raw/){
-        return [1, $hand->{'sorted'}->[scalar($hand->{'sorted'}) - 1]];
+        return [$hand->{'sorted'}->[scalar(@{$hand->{'sorted'}}) - 1], 0];
     } else {
         return [0, 0];
     }
@@ -171,4 +180,4 @@ sub arange_hand {
 }
 __DATA__
 6D 2D 3D 4D 5D
-AH TS TD AD AD
+QD TD JD AD KD
