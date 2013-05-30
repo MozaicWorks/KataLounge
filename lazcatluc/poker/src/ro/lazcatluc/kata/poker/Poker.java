@@ -22,6 +22,9 @@ public class Poker {
     }
     
     public Player getWinner() {
+        if (isDraw()) {
+            throw new IllegalStateException();
+        }
         return player1.getCard() > player2.getCard() ? player1 : player2;
     }
 }
