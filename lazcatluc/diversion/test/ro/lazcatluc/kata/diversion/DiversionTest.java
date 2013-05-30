@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 public class DiversionTest {
 
     @Test
-    public void numberOfZeroSequencesIsZero() throws Exception {
+    public void numberOfZeroSequencesIsOne() throws Exception {
         assertNonAdiacentOneSequences(1, 0);
     }
     
@@ -41,6 +41,7 @@ public class DiversionTest {
     public void numberOfFiveSequencesIsThirteen() throws Exception {
         assertNonAdiacentOneSequences(13, 5);
     }
+    
     private void assertNonAdiacentOneSequences(int expectedResult, int bitLength) {
         assertEquals(expectedResult, Diversion.nonAdiacentOneSequences(bitLength));
     }
