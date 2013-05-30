@@ -4,10 +4,6 @@
  */
 package ro.lazcatluc.kata.diversion;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -16,33 +12,22 @@ import static org.junit.Assert.*;
  * @author Catalin
  */
 public class DiversionTest {
-    
-    public DiversionTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
 
     @Test
     public void numberOfZeroSequencesIsZero() throws Exception {
-        assertEquals(0, nonAdiacentOneSequences(0));
-        
+        assertNonAdiacentOneSequences(0, 0);
+    }
+    
+    @Test
+    public void numberOfOneSequencesIsTwo() throws Exception {
+        assertNonAdiacentOneSequences(2, 1);
+    }
+    
+    private void assertNonAdiacentOneSequences(int expectedResult, int bitLength) {
+        assertEquals(expectedResult, nonAdiacentOneSequences(bitLength));
     }
     
     int nonAdiacentOneSequences(int bitLength) {
-        return 0;
+        return bitLength * 2;
     }
 }
