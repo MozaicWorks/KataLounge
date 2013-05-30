@@ -11,10 +11,12 @@ package ro.lazcatluc.bowling;
 public class Roll {
     private final int first;
     private final int second;
+    private final int bonus;
 
-    public Roll(int first, int second) {
+    public Roll(int first, int second, int bonus) {
         this.first = first;
         this.second = second;
+        this.bonus = bonus;
     }
 
     public int getFirst() {
@@ -27,6 +29,14 @@ public class Roll {
     
     public boolean hasBonus() {
         return first + second == 10;
+    }
+    
+    public boolean hasStrikeBonus() {
+        return first == 10;
+    }
+    
+    public int getResult() {
+        return first + second + (hasBonus()?bonus:0);
     }
     
 }

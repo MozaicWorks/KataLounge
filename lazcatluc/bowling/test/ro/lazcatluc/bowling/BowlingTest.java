@@ -29,15 +29,9 @@ public class BowlingTest {
         assertGoesTo(1, new RollBuilder().setFirst(1).setSecond(0).createRoll());
     }
     
+    
     private void assertGoesTo(int expectedResult, Roll roll) {
         Bowling bowling = newBowlingWith(roll);
-        int result = bowling.getResult();
-        
-        assertEquals(expectedResult, result);
-    }
-    
-    private void assertRollGoesTo(int expectedResult, int firstRoll, int secondRoll) {
-        Bowling bowling = newBowlingWithTwoRolls(firstRoll, secondRoll);
         int result = bowling.getResult();
         
         assertEquals(expectedResult, result);
@@ -48,8 +42,5 @@ public class BowlingTest {
         bowling.roll(roll);
         return bowling;
     }
-    private Bowling newBowlingWithTwoRolls(int firstRoll, int secondRoll) {
-        return newBowlingWith(new RollBuilder().setFirst(firstRoll)
-                .setSecond(secondRoll).createRoll());
-    }
+    
 }
