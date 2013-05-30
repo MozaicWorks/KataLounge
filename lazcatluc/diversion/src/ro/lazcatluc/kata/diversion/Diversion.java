@@ -14,6 +14,14 @@ public class Diversion {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        int bitLength = 10;
+        System.out.println(nonAdiacentOneSequences(bitLength));
+    }
+
+    public static int nonAdiacentOneSequences(int bitLength) {
+        if (bitLength < 1) {
+            return 1;
+        }
+        return nonAdiacentOneSequences(bitLength - 1) + nonAdiacentOneSequences(bitLength - 2);
     }
 }
