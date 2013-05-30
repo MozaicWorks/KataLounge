@@ -25,6 +25,8 @@ public class Roll {
         return second;
     }
     
-    
+    public boolean hasBonus() {
+        return first + second == 10;
+    }
     
 }

@@ -10,21 +10,17 @@ package ro.lazcatluc.bowling;
  */
 public class Bowling {
 
-    int result = 0;
-    
-    public void roll(int popice) {
-        result += popice;
-    }
+    Roll roll;
     
     public void roll(Roll roll) {
-        result += roll.getFirst() + roll.getSecond();
+        this.roll = roll;
     }
     
     public int getResult() {
-        return result;
+        return roll.getFirst() + roll.getSecond();
     }
     
     public boolean hasBonus() {
-        return result == 10;
+        return roll.hasBonus();
     }
 }
