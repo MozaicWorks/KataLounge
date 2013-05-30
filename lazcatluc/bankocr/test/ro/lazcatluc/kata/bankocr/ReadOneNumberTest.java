@@ -45,10 +45,21 @@ public class ReadOneNumberTest {
         assertEquals(3, parse(three));
     }
     
+    @Test
+    public void readFourIs4() throws Exception {
+        String four = 
+        "   "+
+        "|_|"+
+        "  |";
+        
+        assertEquals(4, parse(four));
+    }
+    
     int parse(String s) {
         if (parseOne(s)) return 1;
         if (parseTwo(s)) return 2;
-        return 3;
+        if (parseThree(s)) return 3;
+        return 4;
     }
     
     boolean parseOne(String s) {
@@ -59,5 +70,8 @@ public class ReadOneNumberTest {
         return s.endsWith(" ");
     }
     
+    boolean parseThree(String s) {
+        return !s.startsWith("  ");
+    }
     
 }
