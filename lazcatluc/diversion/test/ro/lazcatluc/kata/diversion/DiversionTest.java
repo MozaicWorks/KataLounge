@@ -15,7 +15,7 @@ public class DiversionTest {
 
     @Test
     public void numberOfZeroSequencesIsZero() throws Exception {
-        assertNonAdiacentOneSequences(0, 0);
+        assertNonAdiacentOneSequences(1, 0);
     }
     
     @Test
@@ -33,15 +33,24 @@ public class DiversionTest {
         assertNonAdiacentOneSequences(5, 3);
     }
     
+    @Test
+    public void numberOfFourSequencesIsEight() throws Exception {
+        assertNonAdiacentOneSequences(8, 4);
+    }
+    @Test
+    public void numberOfFiveSequencesIsThirteen() throws Exception {
+        assertNonAdiacentOneSequences(13, 5);
+    }
     private void assertNonAdiacentOneSequences(int expectedResult, int bitLength) {
         assertEquals(expectedResult, nonAdiacentOneSequences(bitLength));
     }
     
     int nonAdiacentOneSequences(int bitLength) {
-        int nonAdiacentOneSequences = bitLength * 2;
-        if (bitLength >= 2) {
-            nonAdiacentOneSequences -= 1;
+        if (bitLength < 1) {
+            return 1;
         }
-        return nonAdiacentOneSequences;
+        return nonAdiacentOneSequences(bitLength-1)+
+               nonAdiacentOneSequences(bitLength-2);
+        
     }
 }
