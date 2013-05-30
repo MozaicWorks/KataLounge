@@ -11,14 +11,7 @@ import static org.junit.Assert.*;
  *
  * @author Catalin
  */
-public class PokerTest { 
-
-    @Test
-    public void noCardsGameIsDraw() {
-        Poker poker = new PokerBuilder().createPoker();
-        
-        assertTrue(poker.isDraw());
-    }
+public class PokerOneCardTest { 
     
     @Test
     public void oneCardFirstCardHigherFirstPlayerWins() throws Exception {
