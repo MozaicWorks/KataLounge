@@ -36,15 +36,13 @@ public class DiversionTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of main method, of class Diversion.
-     */
     @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        Diversion.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void numberOfZeroSequencesIsZero() throws Exception {
+        assertEquals(0, nonAdiacentOneSequences(0));
+        
+    }
+    
+    int nonAdiacentOneSequences(int bitLength) {
+        return 0;
     }
 }
