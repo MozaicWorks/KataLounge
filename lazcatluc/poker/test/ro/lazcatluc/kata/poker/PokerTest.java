@@ -15,27 +15,27 @@ public class PokerTest {
 
     @Test
     public void noCardsGameIsDraw() {
-        Poker poker = new Poker(new Player(0), new Player(0));
+        Poker poker = new PokerBuilder().setPlayer1(new PlayerBuilder().setCard(0).createPlayer()).setPlayer2(new PlayerBuilder().setCard(0).createPlayer()).createPoker();
         
         assertTrue(poker.isDraw());
     }
     
     @Test
     public void oneCardFirstCardHigherFirstPlayerWins() throws Exception {
-        Player player1 = new Player(1);
-        Player player2 = new Player(0);
+        Player player1 = new PlayerBuilder().setCard(1).createPlayer();
+        Player player2 = new PlayerBuilder().setCard(0).createPlayer();
         
-        Poker poker = new Poker(player1, player2);
+        Poker poker = new PokerBuilder().setPlayer1(player1).setPlayer2(player2).createPoker();
         
         assertEquals(player1, poker.getWinner());
     }
     
     @Test
     public void oneCardEqualCardsIsDraw() throws Exception {
-        Player player1 = new Player(1);
-        Player player2 = new Player(1);
+        Player player1 = new PlayerBuilder().setCard(1).createPlayer();
+        Player player2 = new PlayerBuilder().setCard(1).createPlayer();
         
-        Poker poker = new Poker(player1, player2);
+        Poker poker = new PokerBuilder().setPlayer1(player1).setPlayer2(player2).createPoker();
         
         assertTrue(poker.isDraw());
     }
