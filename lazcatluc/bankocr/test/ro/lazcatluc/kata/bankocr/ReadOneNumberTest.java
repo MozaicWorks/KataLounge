@@ -19,7 +19,7 @@ public class ReadOneNumberTest {
         "  |"+
         "  |";
         
-        assertEquals(1, parse(one));
+        assertParsesTo(1, one);
     }
     
     @Test
@@ -29,7 +29,7 @@ public class ReadOneNumberTest {
         " _|"+
         "|_ ";
         
-        assertEquals(2, parse(two));
+        assertParsesTo(2, two);
     }
     
     @Test
@@ -39,7 +39,7 @@ public class ReadOneNumberTest {
         " _|"+
         " _|";
         
-        assertEquals(3, parse(three));
+        assertParsesTo(3, three);
     }
     
     @Test
@@ -49,7 +49,7 @@ public class ReadOneNumberTest {
         "|_|"+
         "  |";
         
-        assertEquals(4, parse(four));
+        assertParsesTo(4, four);
     }
     
     @Test
@@ -59,7 +59,7 @@ public class ReadOneNumberTest {
         "|_ "+
         " _|"; 
         
-        assertEquals(5, parse(five));
+        assertParsesTo(5, five);
     }
     
     @Test
@@ -69,7 +69,7 @@ public class ReadOneNumberTest {
         "|_ "+
         "|_|"; 
         
-        assertEquals(6, parse(six));        
+        assertParsesTo(6, six);        
     }
     
     @Test
@@ -79,7 +79,7 @@ public class ReadOneNumberTest {
         "  |"+
         "  |";
         
-        assertEquals(7, parse(seven));
+        assertParsesTo(7, seven);
     }
     
     @Test
@@ -89,7 +89,7 @@ public class ReadOneNumberTest {
         "|_|"+
         "|_|";
         
-        assertEquals(8, parse(eight));
+        assertParsesTo(8, eight);
     }
     
     @Test
@@ -99,7 +99,7 @@ public class ReadOneNumberTest {
         "|_|"+
         " _|";
         
-        assertEquals(9, parse(nine));
+        assertParsesTo(9, nine);
     }
     
     @Test
@@ -109,55 +109,10 @@ public class ReadOneNumberTest {
         "| |"+
         "|_|";
         
-        assertEquals(0, parse(zero));
+        assertParsesTo(0, zero);
     }
     
-    int parse(String s) {
-        if (parseOne(s)) return 1;
-        if (parseTwo(s)) return 2;
-        if (parseThree(s)) return 3;
-        if (parseFour(s)) return 4;
-        if (parseFive(s)) return 5;
-        if (parseSix(s)) return 6;
-        if (parseSeven(s)) return 7;
-        if (parseEight(s)) return 8;
-        if (parseNine(s)) return 9;
-        return 0;
-    }
-    
-    boolean parseOne(String s) {
-        return !s.contains("_");
-    }
-    
-    boolean parseTwo(String s) {
-        return s.endsWith(" ");
-    }
-    
-    boolean parseThree(String s) {
-        return !s.contains("|_") && s.endsWith("_|");
-    }
-    
-    boolean parseFour(String s) {
-        return s.startsWith("   ");
-    }
-    
-    boolean parseFive(String s) {
-        return s.endsWith("  _|");
-    }
-    
-    boolean parseSix(String s) {
-        return s.endsWith(" |_|");
-    }
-    
-    boolean parseSeven(String s) {
-        return s.endsWith("  |");
-    }
-    
-    boolean parseEight(String s) {
-        return s.endsWith("_||_|");
-    }
-    
-    boolean parseNine(String s) {
-        return s.endsWith(" _|");
+    private void assertParsesTo(int expectedResult, String from) {
+        assertEquals(expectedResult, new Parser().parse(from));
     }
 }
