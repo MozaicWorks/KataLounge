@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="f4ea0701-d8df-4005-8874-a7c1c4fb609f" name="eduardcs@HI36231 2013-05-31 13:15:13" runUser="CEGEKANV\eduardcs" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="0ca1148e-4b1b-4ae2-af1d-1ad012a7a92f">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="eduardcs_HI36231 2013-05-31 13_15_13" />
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2013-05-31T13:15:13.4143961+03:00" queuing="2013-05-31T13:15:13.4623988+03:00" start="2013-05-31T13:15:13.4673991+03:00" finish="2013-05-31T13:15:13.6644104+03:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod1" storage="d:\testrepo\estanculet\kata.romannumerals\kata.romannumerals\bin\debug\kata.romannumerals.dll" id="a83779a9-c9ec-9a61-719a-bfa5b8a09f17">
+      <Execution id="8bfb02ab-7d3f-4aab-a6e6-c1a5dd5a4d96" />
+      <TestMethod codeBase="D:/TestRepo/estanculet/Kata.RomanNumerals/Kata.RomanNumerals/bin/Debug/Kata.RomanNumerals.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Kata.RomanNumerals.RomanNumeralsTest, Kata.RomanNumerals, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod1" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="a83779a9-c9ec-9a61-719a-bfa5b8a09f17" executionId="8bfb02ab-7d3f-4aab-a6e6-c1a5dd5a4d96" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="8bfb02ab-7d3f-4aab-a6e6-c1a5dd5a4d96" testId="a83779a9-c9ec-9a61-719a-bfa5b8a09f17" testName="TestMethod1" computerName="HI36231" duration="00:00:00.0129932" startTime="2013-05-31T13:15:13.4693992+03:00" endTime="2013-05-31T13:15:13.6534098+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8bfb02ab-7d3f-4aab-a6e6-c1a5dd5a4d96">
+    </UnitTestResult>
+  </Results>
+</TestRun>
