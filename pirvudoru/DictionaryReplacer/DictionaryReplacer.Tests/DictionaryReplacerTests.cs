@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Collections.Generic;
+using NUnit.Framework;
 
 namespace DictionaryReplacer.Tests
 {
@@ -11,6 +12,16 @@ namespace DictionaryReplacer.Tests
         public void SetUp()
         {
             _subject = new DictionaryReplacer();
+        }
+
+        [Test]
+        public void Replace_Always_DoesNotReplaceKeysThatDoNotStartWithDollarSign()
+        {
+            var dictionary = new Dictionary<string, string> { { "key", "value" } };
+
+            _subject.ReplacePlaceholderKeys(dictionary);
+
+            Assert.IsTrue(dictionary.ContainsKey("key"));
         }
     }
 }
