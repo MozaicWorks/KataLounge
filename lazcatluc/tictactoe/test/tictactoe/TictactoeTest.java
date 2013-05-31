@@ -38,11 +38,17 @@ public class TictactoeTest {
     }
     
     @Test
-    public void emptyBoardIsDraw() throws Exception {
+    public void zeroSquaresBoardIsDraw() throws Exception {
         Object DRAW = new Object();
         Object result = DRAW;
         
+        board(0);
+        
         assertEquals(DRAW, result);
+    }
+    
+    private void board(int squaresPerLine) {
+        
     }
 
     private void play() {
