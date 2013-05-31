@@ -16,6 +16,7 @@ public class TictactoeTest {
     private Object X;
     private Object turn;
     private Object Z;
+    private int squaresPerLine;
     
     @Before
     public void setUp() {
@@ -47,8 +48,21 @@ public class TictactoeTest {
         assertEquals(DRAW, result);
     }
     
-    private void board(int squaresPerLine) {
+    @Test
+    public void xWinsOnOneSquareBoardAfterPlaying() throws Exception {
+        board(1);
         
+        play();
+        
+        assertEquals(X, winner());
+    }
+    
+    private Object winner() {
+        return X;
+    }
+    
+    private void board(int squaresPerLine) {
+        this.squaresPerLine = squaresPerLine;
     }
 
     private void play() {
