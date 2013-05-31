@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 5;
+use Test::More tests => 8;
 
 use Data::Dumper;
 
@@ -41,12 +41,60 @@ $test = 'valid dictionary with actual $ sign keys';
 $in  =          {
                     '$eggs$'        => 'spam',
                     '$foo$'         => 'bar',
-                    'stan'          => 'bran',
+                    '$stan$'        => 'bran',
                 };
 $expected =     {
                     'spam'          => 'spam',
                     'bar'           => 'bar',
+                    'bran'          => 'bran',
+                };
+$out = hash_rep($in);
+is_deeply($expected, $out, $test);
+
+
+#6
+$test = 'valid dictionary with no $ sign keys';
+$in  =          {
+                    'eggs'          => 'spam',
+                    'foo'           => 'bar',
                     'stan'          => 'bran',
+                };
+$expected =     {
+                    'eggs'          => 'spam',
+                    'foo'           => 'bar',
+                    'stan'          => 'bran',
+                };
+$out = hash_rep($in);
+is_deeply($expected, $out, $test);
+
+
+#7
+$test = 'valid dictionary with $ signs inserted keys';
+$in  =          {
+                    'eg$gs'         => 'spam',
+                    'fo$$o'         => 'bar',
+                    's$n'           => 'bran',
+                };
+$expected =     {
+                    'eg$gs'         => 'spam',
+                    'fo$$o'         => 'bar',
+                    's$n'           => 'bran',
+                };
+$out = hash_rep($in);
+is_deeply($expected, $out, $test);
+
+
+#8
+$test = 'valid dictionary with one $ sign keys';
+$in  =          {
+                    '$ggs'          => 'spam',
+                    'fo$'           => 'bar',
+                    '$'             => 'bran',
+                };
+$expected =     {
+                    '$ggs'          => 'spam',
+                    'fo$'           => 'bar',
+                    '$'             => 'bran',
                 };
 $out = hash_rep($in);
 is_deeply($expected, $out, $test);
