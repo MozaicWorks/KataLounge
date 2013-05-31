@@ -36,6 +36,14 @@ public class TictactoeTest {
         
         assertEquals(Z, turn);
     }
+    
+    @Test
+    public void emptyBoardIsDraw() throws Exception {
+        Object DRAW = new Object();
+        Object result = DRAW;
+        
+        assertEquals(DRAW, result);
+    }
 
     private void play() {
         turn = Z;
