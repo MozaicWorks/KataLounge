@@ -10,14 +10,16 @@ package ro.lazcatluc.bowling;
  */
 public class Bowling {
 
-    Roll roll;
+    private Roll roll;
+    private int result = 0;
     
     public void roll(Roll roll) {
         this.roll = roll;
+        result += roll.getResult();
     }
     
     public int getResult() {
-        return roll.getResult();
+        return result;
     }
 
 }

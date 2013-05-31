@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
  *
  * @author Catalin
  */
-public class BowlingTest {
+public class OneRollBowlingTest {
     
 
     @Test
