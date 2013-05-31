@@ -17,12 +17,14 @@ public class TictactoeTest {
     private Object turn;
     private Object Z;
     private int squaresPerLine;
+    private boolean emptyBoard;
     
     @Before
     public void setUp() {
         X = new Object();
         turn = X;
         Z = new Object();
+        emptyBoard = true;
     }
     
    
@@ -57,7 +59,15 @@ public class TictactoeTest {
         assertEquals(X, winner());
     }
     
+    @Test(expected = IllegalStateException.class)
+    public void noWinnerIfNoPlay() throws Exception {
+        winner();
+
+    }
     private Object winner() {
+        if (emptyBoard) {
+            throw new IllegalStateException();
+        }
         return X;
     }
     
@@ -66,6 +76,7 @@ public class TictactoeTest {
     }
 
     private void play() {
+        emptyBoard = false;
         turn = Z;
     }
 }
