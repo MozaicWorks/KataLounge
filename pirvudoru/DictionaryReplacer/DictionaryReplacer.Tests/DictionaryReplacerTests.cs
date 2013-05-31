@@ -53,5 +53,15 @@ namespace DictionaryReplacer.Tests
 
             Assert.IsTrue(dictionary.ContainsKey("value"));
         }
+
+        [Test]
+        public void Replace_Always_SetsAsValueToTheReplacedKeysTheOriginalValue()
+        {
+            var dictionary = new Dictionary<string, string> { { "$key$", "value" } };
+
+            _subject.ReplacePlaceholderKeys(dictionary);
+
+            Assert.IsTrue(dictionary.ContainsValue("value"));
+        }
     }
 }

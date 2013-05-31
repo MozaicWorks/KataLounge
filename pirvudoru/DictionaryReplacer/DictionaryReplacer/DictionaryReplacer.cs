@@ -14,7 +14,7 @@ namespace DictionaryReplacer
                 var value = target[key];
 
                 target.Remove(key);
-                target.Add(value, string.Empty);
+                target.Add(value, value);
             }
         }
     }
