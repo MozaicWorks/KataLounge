@@ -15,7 +15,10 @@ public class TictactoeTest {
     
    
     @Test
-    public void test() {
+    public void xPlaysFirst() {
+        Object X = new Object();
+        Object turn = X;
         
+        assertEquals(X, turn);
     }
 }
