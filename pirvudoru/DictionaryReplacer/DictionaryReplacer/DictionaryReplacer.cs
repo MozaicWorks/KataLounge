@@ -13,16 +13,21 @@ namespace DictionaryReplacer
 
             foreach (var key in keys)
             {
-                var value = target[key];
-
-                target.Remove(key);
-                target.Add(value, value);
+                ReplaceKeyWithValue(target, key);
             }
         }
 
         private bool IsPlaceholder(string key)
         {
             return key.StartsWith(WildCard) && key.EndsWith(WildCard);
+        }
+
+        private void ReplaceKeyWithValue(Dictionary<string, string> target, string key)
+        {
+            var value = target[key];
+
+            target.Remove(key);
+            target.Add(value, value);
         }
     }
 }
