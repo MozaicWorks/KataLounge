@@ -10,18 +10,23 @@ package ro.lazcatluc.bowling;
  */
 public class Bowling {
 
+    private Roll previousRoll = new RollBuilder().createRoll();
     private Roll roll = new RollBuilder().createRoll();
     private int result = 0;
     
-    public void roll(Roll roll) {
-        if (this.roll.hasBonus()) {
-            result += roll.getFirst();
-            if (this.roll.hasStrikeBonus()) {
-                result += roll.getSecond();
+    public void roll(Roll newRoll) {
+        if (previousRoll.hasStrikeBonus() && roll.hasStrikeBonus()) {
+            result += newRoll.getFirst();
+        }
+        if (roll.hasBonus()) {
+            result += newRoll.getFirst();
+            if (roll.hasStrikeBonus() && !newRoll.hasStrikeBonus()) {
+                result += newRoll.getSecond();
             }
         }
-        result += roll.getResult();
-        this.roll = roll;
+        result += newRoll.getResult();
+        previousRoll = roll;
+        roll = newRoll;
     }
     
     public int getResult() {
