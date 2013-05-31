@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 8;
+use Test::More tests => 10;
 
 use Data::Dumper;
 
@@ -96,6 +96,33 @@ $expected =     {
                     'fo$'           => 'bar',
                     '$'             => 'bran',
                 };
+$out = hash_rep($in);
+is_deeply($expected, $out, $test);
+
+
+
+#9
+$test = 'valid dictionary with only $ sign keys';
+$in  =          {
+                    '$'             => 'foo',
+                    '$$'            => 'bar',
+                    '$$$'           => 'spam',
+                    '$$$$'          => 'eggs',
+                };
+$expected =     {
+                    '$'             => 'foo',
+                    'bar'           => 'bar',
+                    'spam'          => 'spam',
+                    'eggs'          => 'eggs',
+                };
+$out = hash_rep($in);
+is_deeply($expected, $out, $test);
+
+
+#10
+$test = 'string with prefix/suffix $ signs';
+$in  =  '$this is a string$';
+$expected =     {};
 $out = hash_rep($in);
 is_deeply($expected, $out, $test);
 
