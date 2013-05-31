@@ -9,7 +9,7 @@ namespace DictionaryReplacer
 
         public void ReplacePlaceholderKeys(Dictionary<string, string> target)
         {
-            var keys = target.Keys.Where(k => IsPlaceholder(k)).ToList();
+            var keys = target.Keys.Where(IsPlaceholder).ToList();
 
             foreach (var key in keys)
             {
@@ -20,9 +20,9 @@ namespace DictionaryReplacer
             }
         }
 
-        private bool IsPlaceholder(string k)
+        private bool IsPlaceholder(string key)
         {
-            return k.StartsWith(WildCard) && k.EndsWith(WildCard);
+            return key.StartsWith(WildCard) && key.EndsWith(WildCard);
         }
     }
 }
