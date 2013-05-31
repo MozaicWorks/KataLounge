@@ -29,14 +29,14 @@ public class RollTest {
     
     @Test
     public void rollingTenHasBonus() throws Exception {
-        Roll roll = new RollBuilder().setFirst(10).createRoll();
+        Roll roll = new RollBuilder().setFirst(Roll.STRIKE_SCORE).createRoll();
         
         assertTrue(roll.hasBonus());
     }
     
     @Test
     public void rollingTenHasStrikeBonus() throws Exception {
-        Roll roll = new RollBuilder().setFirst(10).createRoll();
+        Roll roll = new RollBuilder().setFirst(Roll.STRIKE_SCORE).createRoll();
         
         assertTrue(roll.hasStrikeBonus());
     }
