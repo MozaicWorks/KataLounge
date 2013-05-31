@@ -47,14 +47,14 @@ public class RollBuilder {
     }
     
     public RollBuilder strike() {
-        setFirst(10);
+        setFirst(Roll.STRIKE_SCORE);
         setSecond(0);
         return this;
     }
     
     public RollBuilder spare() {
         setFirst(0);
-        setSecond(10);
+        setSecond(Roll.STRIKE_SCORE);
         return this;
     }
 }

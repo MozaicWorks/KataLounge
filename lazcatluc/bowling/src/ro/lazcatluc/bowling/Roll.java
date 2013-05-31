@@ -9,6 +9,8 @@ package ro.lazcatluc.bowling;
  * @author Catalin
  */
 public class Roll {
+    public static final int STRIKE_SCORE = 10;
+    
     private final int first;
     private final int second;
     private final int bonus;
@@ -30,11 +32,11 @@ public class Roll {
     }
     
     public boolean hasBonus() {
-        return first + second == 10;
+        return first + second == STRIKE_SCORE;
     }
     
     public boolean hasStrikeBonus() {
-        return first == 10;
+        return first == Roll.STRIKE_SCORE;
     }
     
     public int getResult() {
