@@ -25,6 +25,17 @@ public class TwoRollsBowlingTest {
         assertEquals(expectedResult, bowling.getResult());
     }
     
+    @Test
+    public void twoRollsWithSpareFirstAddTheFirstThrowOfTheSecondRollTwice() throws Exception {
+        Roll firstRoll = new RollBuilder().spare().createRoll();
+        Roll secondRoll = new RollBuilder().setFirst(1).setSecond(0).createRoll();
+        int expectedResult = 12;
+        
+        Bowling bowling = newBowlingWith(firstRoll, secondRoll);
+        
+        assertEquals(expectedResult, bowling.getResult());
+    }
+    
     private Bowling newBowlingWith(Roll firstRoll, Roll secondRoll) {
         Bowling bowling = new Bowling();
         bowling.roll(firstRoll);

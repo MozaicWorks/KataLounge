@@ -10,12 +10,15 @@ package ro.lazcatluc.bowling;
  */
 public class Bowling {
 
-    private Roll roll;
+    private Roll roll = new RollBuilder().createRoll();
     private int result = 0;
     
     public void roll(Roll roll) {
-        this.roll = roll;
+        if (this.roll.hasBonus()) {
+            result += roll.getFirst();
+        }
         result += roll.getResult();
+        this.roll = roll;
     }
     
     public int getResult() {
