@@ -15,6 +15,7 @@ import org.junit.Ignore;
 public class TictactoeTest {
     private Object X = new Object();
     private Object turn = X;
+    private Object Z = new Object();
     
    
     @Test
@@ -24,16 +25,13 @@ public class TictactoeTest {
     }
     
     @Test
-    @Ignore
-    public void zPlaysSecond() throws Exception {
-        Object Z = new Object();
-        
+    public void zPlaysSecond() throws Exception {        
         play();
         
         assertEquals(Z, turn);
     }
 
     private void play() {
-        
+        turn = Z;
     }
 }
