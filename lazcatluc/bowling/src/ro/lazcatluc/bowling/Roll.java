@@ -12,11 +12,13 @@ public class Roll {
     private final int first;
     private final int second;
     private final int bonus;
+    private final int strikeBonus;
 
-    public Roll(int first, int second, int bonus) {
+    public Roll(int first, int second, int bonus, int strikeBonus) {
         this.first = first;
         this.second = second;
         this.bonus = bonus;
+        this.strikeBonus = strikeBonus;
     }
 
     public int getFirst() {
@@ -36,7 +38,9 @@ public class Roll {
     }
     
     public int getResult() {
-        return first + second + (hasBonus()?bonus:0);
+        return first + second + 
+                (hasBonus()?bonus:0) + 
+                (hasStrikeBonus()?strikeBonus:0);
     }
     
 }

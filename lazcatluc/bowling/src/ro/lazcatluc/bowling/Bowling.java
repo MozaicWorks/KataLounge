@@ -17,7 +17,7 @@ public class Bowling {
     }
     
     public int getResult() {
-        return roll.getFirst() + roll.getSecond();
+        return roll.getResult();
     }
 
 }

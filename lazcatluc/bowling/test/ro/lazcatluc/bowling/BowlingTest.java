@@ -29,6 +29,10 @@ public class BowlingTest {
         assertGoesTo(1, new RollBuilder().setFirst(1).setSecond(0).createRoll());
     }
     
+    @Test
+    public void rollFiveFiveWithOneBonusGoesToEleven() throws Exception {
+        assertGoesTo(11, new RollBuilder().setFirst(5).setSecond(5).setBonus(1).createRoll());
+    }
     
     private void assertGoesTo(int expectedResult, Roll roll) {
         Bowling bowling = newBowlingWith(roll);
