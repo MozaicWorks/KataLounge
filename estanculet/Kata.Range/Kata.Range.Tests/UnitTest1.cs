@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Kata.Args.Test
+namespace Kata.Range.Tests
 {
     [TestClass]
-    public class TestParse
+    public class UnitTest1
     {
         [TestMethod]
-        public void Test()
+        public void TestMethod1()
         {
         }
     }

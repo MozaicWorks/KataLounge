@@ -4,10 +4,10 @@
  */
 package ro.lazcatluc.kata.reversi;
 
+import java.awt.Color;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
-import org.junit.Ignore;
 
 /**
  *
@@ -30,18 +30,15 @@ public class ReversiTest {
     }
     
     @Test
-    public void finishOnOneSquareLine() {
-        reversi.line(1);
+    public void finishOnOneEmptySquareLine() {
+        reversi.line(1, Color.GRAY);
         
         assertTrue(reversi.isFinished());
     }
     
     @Test
-    @Ignore
-    public void finishOnOneSquareLineWithAnyColor() throws Exception {
-        reversi.line(1);
+    public void finishOnTwoEmptySquareLine() throws Exception {
         
-        assertTrue(reversi.isFinished());
     }
    
 }

@@ -4,7 +4,17 @@
 /lazcatluc/bankocr/build/
 /lazcatluc/reversi/nbproject/private/
 /lazcatluc/reversi/build/
+<<<<<<< HEAD
 /Stanculet/Args/Kata.Args/bin
 /Stanculet/Args/Kata.Args/obj
 /Stanculet/Args/Kata.Args.Test/bin
 /Stanculet/Args/Kata.Args.Test/obj
+=======
+/lazcatluc/poker/nbproject/private/
+/lazcatluc/poker/build/
+>>>>>>> f8bcf8f2564b86027f246171f9a35f10dd7f71ed
+
+/estanculet/Kata.Range/Kata.Range.Tests/bin
+/estanculet/Kata.Range/Kata.Range.Tests/obj
+/estanculet/Kata.Range/*.suo
+/estanculet/Kata.Range/TestResults

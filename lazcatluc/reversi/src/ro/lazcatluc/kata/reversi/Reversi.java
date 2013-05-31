@@ -4,6 +4,8 @@
  */
 package ro.lazcatluc.kata.reversi;
 
+import java.awt.Color;
+
 /**
  *
  * @author Catalin
@@ -17,7 +19,7 @@ public class Reversi {
     void emptyBoard() {
     }
 
-    void line(int square) {
+    void line(int square, Color color) {
     }
 
     
