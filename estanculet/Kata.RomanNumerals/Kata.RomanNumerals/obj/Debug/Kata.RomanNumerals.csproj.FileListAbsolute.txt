@@ -1,0 +1,5 @@
+D:\TestRepo\estanculet\Kata.RomanNumerals\Kata.RomanNumerals\obj\Debug\ResolveAssemblyReference.cache
+D:\TestRepo\estanculet\Kata.RomanNumerals\Kata.RomanNumerals\bin\Debug\Kata.RomanNumerals.dll
+D:\TestRepo\estanculet\Kata.RomanNumerals\Kata.RomanNumerals\bin\Debug\Kata.RomanNumerals.pdb
+D:\TestRepo\estanculet\Kata.RomanNumerals\Kata.RomanNumerals\obj\Debug\Kata.RomanNumerals.dll
+D:\TestRepo\estanculet\Kata.RomanNumerals\Kata.RomanNumerals\obj\Debug\Kata.RomanNumerals.pdb
