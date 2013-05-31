@@ -1,7 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryReplacer", "DictionaryReplacer\DictionaryReplacer.csproj", "{72C816BB-0F8B-45A8-8799-9354659650BF}"
+EndProject
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72C816BB-0F8B-45A8-8799-9354659650BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72C816BB-0F8B-45A8-8799-9354659650BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72C816BB-0F8B-45A8-8799-9354659650BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72C816BB-0F8B-45A8-8799-9354659650BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D3A4A9D-7F70-4997-85A0-1BDC18C6327D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D3A4A9D-7F70-4997-85A0-1BDC18C6327D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D3A4A9D-7F70-4997-85A0-1BDC18C6327D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D3A4A9D-7F70-4997-85A0-1BDC18C6327D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
