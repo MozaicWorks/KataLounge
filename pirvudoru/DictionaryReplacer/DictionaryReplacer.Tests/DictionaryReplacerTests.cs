@@ -43,5 +43,15 @@ namespace DictionaryReplacer.Tests
 
             Assert.IsTrue(dictionary.ContainsKey("key$"));
         }
+
+        [Test]
+        public void Replace_Always_ReplacesKeysThatStartAndEndWithDollarSign()
+        {
+            var dictionary = new Dictionary<string, string> { { "$key$", "value" } };
+
+            _subject.ReplacePlaceholderKeys(dictionary);
+
+            Assert.IsTrue(dictionary.ContainsKey("value"));
+        }
     }
 }
