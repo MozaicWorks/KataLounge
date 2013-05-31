@@ -6,21 +6,27 @@ package tictactoe;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
-import org.junit.Ignore;
+import org.junit.Before;
 
 /**
  *
  * @author Catalin
  */
 public class TictactoeTest {
-    private Object X = new Object();
-    private Object turn = X;
-    private Object Z = new Object();
+    private Object X;
+    private Object turn;
+    private Object Z;
+    
+    @Before
+    public void setUp() {
+        X = new Object();
+        turn = X;
+        Z = new Object();
+    }
     
    
     @Test
     public void xPlaysFirst() {
-        
         assertEquals(X, turn);
     }
     
