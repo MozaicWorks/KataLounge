@@ -2,7 +2,7 @@ use strict;
 use warnings;
 
 my $nr_bits = 5;
-my $adjacent;
+my $adjacent = 3;
 my $mask;
 my $shift_left_bits;
 my $bad;
@@ -12,8 +12,6 @@ my $count_non_adjacent = 0;
 my $last = 2**$nr_bits-1;
 
 for (my $i = 0; $i<=$last; $i++) {
-    # two adjacent bits means 3(11) shifted to the left
-    $adjacent = 3;
     $shift_left_bits = 0;
     $bad = 0;
     while(1) {
