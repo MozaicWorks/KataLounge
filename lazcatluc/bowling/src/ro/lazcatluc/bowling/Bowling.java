@@ -16,6 +16,9 @@ public class Bowling {
     public void roll(Roll roll) {
         if (this.roll.hasBonus()) {
             result += roll.getFirst();
+            if (this.roll.hasStrikeBonus()) {
+                result += roll.getSecond();
+            }
         }
         result += roll.getResult();
         this.roll = roll;
